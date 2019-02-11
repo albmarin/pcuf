@@ -1,0 +1,16 @@
+pip==18.1
+bump2version==0.5.10
+wheel==0.32.1
+watchdog==0.9.0
+flake8==3.5.0
+black==18.9b0
+tox==3.5.2
+coverage==4.5.1
+Sphinx==1.8.1
+twine==1.12.1
+codecov==2.0.15
+
+pytest==3.8.2
+pytest-runner==4.2
+pytest-cov==2.6.1
+pre-commit==1.13.0

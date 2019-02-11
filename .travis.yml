@@ -1,0 +1,15 @@
+language: python
+python:
+- 3.6
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: albertomarin-pypi
+  password:
+    secure: M16h0Wzp/09t3nDaHCS2yjPVrUM392fIFttidq6aOIdujlElrR0I/Ia/bDIjMxkLZykEsQJDFNF6amUQyc9NgQsO5rVQ8oKBgCgVsijMViWFxF7SuOC35PQv9xQ6wZWIalfsRYnlIaQFfMNHPbvqo71ep6BveWotMlzyneL3udkf5hoVArofF92CiTt4QaakNFlO+u3D7dBFgIDYIjURwWCV4eX58m8uLV55k4yw5J0YNoqOXgM14lTGflumunlrLISokZW+CBTL5KJhlwolryx9jGZ4Kt0pog1jQu37sgnfOl/u8rxLAn4/2vlt7Ujsv2o1HfWYKIgrg79zE8NXBqVSUEqmcSJbMWP+/bvi5NkcO3mpPPXSGhIxNPrzHLT01/UuQnAoRaCVRE1Ute8gcgOSxuviALfvVXwSa+ZUHRRwriFuwaiWO4fBPPIsWpb6wgugSte7eVRV+LyuR1jd0HdBcUj9yjPJv73zn4QRjhy2Q0HN6E85izWb3QtMDaD7nwPn7pnWzTgtiiw24pnbz4UZ4O4lCnvuG9FQ6VmBcWq6zJv6ojh0oaUpIDs380k/J56xFZces07RSrCgj9/ulLPUsCiDvBrra68g0jouLl9M+Zn1K1zdeS4uIP9v9xdmpz1VsZkD6ahUwlo+qzUVvvJQO9m8pbc+ALJmlHAPaRU=
+  on:
+    tags: true
+    repo: git-albertomarin/pcuf
+    python: 3.6
