@@ -20,8 +20,6 @@ repos:
     -   id: check-vcs-permalinks
     -   id: debug-statements
     -   id: detect-private-key
-    -   id: end-of-file-fixer
-    -   id: fix-encoding-pragma
     -   id: pretty-format-json
         args: [--autofix, --indent=2]
     -   id: requirements-txt-fixer
