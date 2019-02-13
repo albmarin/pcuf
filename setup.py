@@ -11,7 +11,13 @@ with open("README.rst") as readme_file:
 with open("HISTORY.rst") as history_file:
     history = history_file.read()
 
-requirements = ["xlrd>=1.2.0", "pandas>=0.24.1", "requests>=2.21.0"]
+requirements = [
+    "xlrd>=1.2.0",
+    "pandas>=0.24.1",
+    "requests>=2.21.0",
+    "click>=7.0",
+    "openpyxl>=2.5.12",
+]
 
 setup_requirements = ["pytest-runner"]
 
