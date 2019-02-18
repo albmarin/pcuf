@@ -2,7 +2,12 @@
 import warnings
 from typing import Union
 
-warnings.simplefilter("always", DeprecationWarning)
+
+class SimpleDeprecationWarning(DeprecationWarning):
+    pass
+
+
+warnings.simplefilter("always", SimpleDeprecationWarning)
 
 
 def deprecate(
@@ -18,4 +23,4 @@ def deprecate(
         message += "\nRead more <https://git.io/{}#file-{}-md>".format(
             link_uid, link_file
         )
-    warnings.warn(DeprecationWarning(message), stacklevel=2)
+    warnings.warn(SimpleDeprecationWarning(message), stacklevel=2)
