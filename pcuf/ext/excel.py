@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 from datetime import datetime
+from typing import Tuple, List, Dict, Any
 
 import pandas
 import xlrd
@@ -13,7 +14,7 @@ def load_wb_data(
     table_row: int = 0,
     table_col: int = 0,
     invert_direction: bool = False,
-) -> dict:
+) -> Tuple[List[str], Dict[str:Any]]:
     wb = xlrd.open_workbook(path, on_demand=True)
     ws = wb.sheet_by_index(sheet_index)
     header = []
@@ -46,7 +47,8 @@ def load_wb_data(
             elm[elm_key] = cell_value
 
         data.append(elm)
-    return data
+
+    return header, data
 
 
 def load_wb_cell(path, sheet_index=0, cell="A1"):
