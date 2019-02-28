@@ -14,7 +14,7 @@ def load_wb_data(
     table_row: int = 0,
     table_col: int = 0,
     invert_direction: bool = False,
-) -> Tuple[List[str], Dict[str:Any]]:
+) -> Tuple[List[str], Dict[str, Any]]:
     wb = xlrd.open_workbook(path, on_demand=True)
     ws = wb.sheet_by_index(sheet_index)
     header = []
