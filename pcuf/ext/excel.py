@@ -14,7 +14,7 @@ def load_wb_data(
     table_row: int = 0,
     table_col: int = 0,
     invert_direction: bool = False,
-) -> Tuple[List[str], Dict[str, Any]]:
+) -> Tuple[List[str], List[Dict[str, Any]]]:
     wb = xlrd.open_workbook(path, on_demand=True)
     ws = wb.sheet_by_index(sheet_index)
     header = []
@@ -35,7 +35,9 @@ def load_wb_data(
         if invert_direction:
             cell_value = ws.cell_value(col, table_row)
 
-        header.append(" ".join(str(cell_value).split()))
+        cell_value = " ".join(str(cell_value).split()).lower()
+        cell_value = re.sub(r"[^\w]", "_", cell_value).strip("_")
+        header.append(cell_value)
 
     for row in range(*table_range):
         elm = {}
@@ -43,8 +45,8 @@ def load_wb_data(
             cell_value = ws.cell_value(row, col)
             if invert_direction:
                 cell_value = ws.cell_value(col, row)
-            elm_key = re.sub(r"[^\w]", "_", header[col].lower()).strip("_")
-            elm[elm_key] = cell_value
+
+            elm[header[col]] = cell_value
 
         data.append(elm)
 
@@ -61,14 +63,13 @@ def load_wb_cell(path, sheet_index=0, cell="A1"):
 
 def convert_excel_time(excel_time):
     if isinstance(excel_time, float):
-        dt = pandas.to_datetime("1899-12-30") + pandas.to_timedelta(excel_time, "D")
-        return dt.strftime("%a, %d %b %Y %H:%M:%S -0500")
+        return pandas.to_datetime("1899-12-30") + pandas.to_timedelta(excel_time, "D")
 
     if isinstance(excel_time, str):
         try:
-            dt = datetime.strptime(excel_time, "%a, %d %b %Y %H:%M:%S %z")
-            return dt.strftime("%a, %d %b %Y %H:%M:%S %z")
+            return datetime.strptime(excel_time, "%a, %d %b %Y %H:%M:%S %z")
+
         except ValueError:
             pass
 
-    return ""
+    return None
