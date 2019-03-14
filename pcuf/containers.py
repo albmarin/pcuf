@@ -21,12 +21,12 @@ def lookahead(iterable):
     yield last, False
 
 
-def haskey(element, keys, return_remaining=False):
+def haskey(element, keys, default=None, return_remaining=False):
     """
     Check if keys (nested) exists in `element` (dict).
     """
     if element is None or keys is None:
-        return None
+        return default
 
     if not isinstance(element, dict):
         raise TypeError(f"haskey() expects dict as element, got {type(element)}")
@@ -44,8 +44,8 @@ def haskey(element, keys, return_remaining=False):
             _keys.remove(key)
         except KeyError:
             if return_remaining:
-                return None, (_element, _keys)
-            return None
+                return default, (_element, _keys)
+            return default
 
     if return_remaining:
         return _element, (_element, _keys)
