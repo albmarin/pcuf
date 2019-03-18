@@ -6,7 +6,7 @@ from .containers import lookahead, assign_key, haskey, grouper
 
 __author__ = """Alberto J. Marin"""
 __email__ = "alberto@ajmar.in"
-__version__ = "0.1.8"
+__version__ = "0.1.9"
 
 __all__ = [
     "file",
