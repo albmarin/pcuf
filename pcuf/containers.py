@@ -42,7 +42,7 @@ def haskey(element, keys, default=None, return_remaining=False):
         try:
             _element = _element[key]
             _keys.remove(key)
-        except KeyError:
+        except (KeyError, TypeError):
             if return_remaining:
                 return default, (_element, _keys)
             return default
