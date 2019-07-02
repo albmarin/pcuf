@@ -13,4 +13,4 @@ codecov==2.0.15
 pytest==3.8.2
 pytest-runner==5.1
 pytest-cov==2.7.1
-pre-commit==1.13.0
+pre-commit==1.17.0
