@@ -6,7 +6,7 @@ flake8==3.7.9
 black==19.10b0
 tox==3.14.5
 coverage==5.0.3
-Sphinx==2.4.3
+Sphinx==2.4.4
 twine==3.1.1
 codecov==2.0.16
 
