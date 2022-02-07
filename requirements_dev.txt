@@ -10,7 +10,7 @@ Sphinx==4.4.0
 twine==3.8.0
 codecov==2.1.12
 
-pytest==6.2.2
+pytest==7.0.0
 pytest-runner==5.2
 pytest-cov==2.11.1
 pre-commit==2.10.0
