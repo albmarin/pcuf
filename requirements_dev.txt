@@ -4,7 +4,7 @@ wheel==0.38.4
 watchdog==2.2.0
 flake8==6.0.0
 black==23.1a1
-tox==3.21.4
+tox==4.0.14
 coverage==5.4
 Sphinx==3.4.3
 twine==3.3.0
