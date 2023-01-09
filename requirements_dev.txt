@@ -7,7 +7,7 @@ black==23.1a1
 tox==4.2.6
 coverage==7.0.4
 Sphinx==6.1.2
-twine==3.3.0
+twine==4.0.2
 codecov==2.1.11
 
 pytest==6.2.2
