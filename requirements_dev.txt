@@ -8,7 +8,7 @@ tox==4.21.2
 coverage==7.6.3
 Sphinx==8.1.3
 twine==5.1.1
-codecov==2.1.11
+codecov==2.1.13
 
 pytest==6.2.2
 pytest-runner==5.2
